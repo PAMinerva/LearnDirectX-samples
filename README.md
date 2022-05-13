@@ -11,4 +11,4 @@ then give the following tutorial series a chance: <br />
 <!---
 ![](images/camera.gif) <br /><br />
 -->
-<img src="images/camera.gif" alt="camera" width="400"/>  <br /><br />
+<img src="images/07.gif" alt="camera" width="400"/>  <br /><br />
