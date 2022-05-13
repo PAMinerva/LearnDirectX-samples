@@ -13,4 +13,9 @@ Youtube Channel: [P. A. Minerva](https://www.youtube.com/channel/UCbIj8FkdUnF4uN
 <!---
 ![](images/camera.gif) <br /><br />
 -->
-<img src="images/07.gif" alt="camera" width="300"/>  <br /><br />
+<img src="images/07.gif" alt="camera" width="300"/>  <br /><br /><br />
+
+## Credits
+* https://github.com/microsoft/DirectX-Graphics-Samples <br />
+* https://github.com/microsoft/Xbox-ATG-Samples <br />
+* https://github.com/walbourn
