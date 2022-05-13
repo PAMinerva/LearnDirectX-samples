@@ -1,22 +1,14 @@
 # DX12Samples
 ## Description
-DirectX 12 samples that extends Frank Luna's Camera demo by implementing a simple third person camera. <br />
-For the sake of semplicity collision detection has not been taken into account. <br />
+Supplemental samples for the Microsoft repository [DirectX-Graphics-Samples](https://github.com/microsoft/DirectX-Graphics-Samples) <br />
 
-Blog post: [Camera in prima e terza persona](https://paminerva.blogspot.com/2021/09/12-camera-in-prima-e-terza-persona.html) <br /> <br />
+If you are looking for a comprehensive, updated resource to learn how to program with DirectX 12 from scratch, <br />
+then give the following tutorial series a chance: <br />
+[DirectX 12 via official samples](https://ko-fi.com/paminerva) <br /> <br />
 
-## Controls
-* `LEFT MOUSE`: &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;&nbsp; Pitch/Yaw <br />
-* `RIGHT MOUSE`: &ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Zoom <br />
-* `W` / `A` / `S` / `D`: &ensp;&ensp;&ensp; Move <br />
-* `1` / `3`: &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Switch camera <br /><br />
-
+## Samples
+### [07-D3D12HelloTransformations](https://github.com/PAMinerva/DX12Samples/tree/master/07-D3D12HelloTransformations)
 <!---
 ![](images/camera.gif) <br /><br />
 -->
 <img src="images/camera.gif" alt="camera" width="400"/>  <br /><br />
-
-## Credits <br />
-* https://github.com/d3dcoder/d3d12book <br />
-* https://github.com/ericrrichards/dx11 <br />
-*  https://github.com/MKXJun/DirectX11-With-Windows-SDK
