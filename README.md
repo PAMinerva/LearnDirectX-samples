@@ -1,4 +1,4 @@
-# DX12Samples
+# DX12-Samples
 ## Description
 Supplemental samples for the Microsoft repository [DirectX-Graphics-Samples](https://github.com/microsoft/DirectX-Graphics-Samples) <br />
 
