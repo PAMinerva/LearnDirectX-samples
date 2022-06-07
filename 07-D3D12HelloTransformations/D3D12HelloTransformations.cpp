@@ -382,7 +382,7 @@ void D3D12HelloTransformations::OnUpdate()
         m_curRotationAngleRad -= XM_2PI;
     }
 
-    // Rotate the cube around the origin
+    // Rotate the cube around the Y-axis
     XMStoreFloat4x4(&m_worldMatrix, XMMatrixRotationY(m_curRotationAngleRad));
 }
 
