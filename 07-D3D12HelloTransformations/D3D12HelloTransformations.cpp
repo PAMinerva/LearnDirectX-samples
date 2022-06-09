@@ -308,24 +308,38 @@ void D3D12HelloTransformations::LoadAssets()
         m_vertexBufferView.StrideInBytes = sizeof(Vertex);
         m_vertexBufferView.SizeInBytes = vertexBufferSize;
 
+        //    3________ 2
+        //    /|      /|
+        //   /_|_____/ |
+        //  0|7|_ _ 1|_|6
+        //   | /     | /
+        //   |/______|/
+        //  4       5
+        //
         // Create index buffer
         UINT16 indices[] =
         {
+            // TOP
             3,1,0,
             2,1,3,
 
+            // FRONT
             0,5,4,
             1,5,0,
 
+            // RIGHT
             3,4,7,
             0,4,3,
 
+            // LEFT
             1,6,5,
             2,6,1,
 
+            // BACK
             2,7,6,
             3,7,2,
 
+            // BOTTOM
             6,4,5,
             7,4,6,
         };
