@@ -32,7 +32,7 @@ struct PSInput
 //--------------------------------------------------------------------------------------
 PSInput VSMain(float4 position : POSITION, float4 color : COLOR)
 {
-	PSInput output = (PSInput) 0;
+	PSInput output = (PSInput)0;
 	output.position = mul(position, World);
 	output.position = mul(output.position, View);
 	output.position = mul(output.position, Projection);
