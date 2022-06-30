@@ -1,10 +1,10 @@
 # DX12-Samples
 ## Description
-Supplemental samples for the Microsoft repository [DirectX-Graphics-Samples](https://github.com/microsoft/DirectX-Graphics-Samples) <br />
+Supplemental samples for [Learn DirectX](https://learndirectx.net) <br />
 
 If you are looking for a comprehensive, updated resource to learn how to program with DirectX 12 from scratch, <br />
 then give the following tutorial series a chance: <br />
-[DirectX 12 via official samples](https://ko-fi.com/paminerva) <br />
+[Learn DirectX](https://learndirectx.net) <br />
 
 Youtube Channel: [P. A. Minerva](https://www.youtube.com/channel/UCbIj8FkdUnF4uNypTPsuzpA) <br /> <br />
 
