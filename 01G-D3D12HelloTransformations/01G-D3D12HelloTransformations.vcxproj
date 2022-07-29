@@ -22,8 +22,9 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{6eaca2ea-b1db-4beb-a8a6-691c2eb6abbd}</ProjectGuid>
-    <RootNamespace>My07D3D12HelloTransformations</RootNamespace>
+    <RootNamespace>My01GD3D12HelloTransformations</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>01G-D3D12HelloTransformations</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

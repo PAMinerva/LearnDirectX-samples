@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07-D3D12HelloTransformations", "07-D3D12HelloTransformations\07-D3D12HelloTransformations.vcxproj", "{6EACA2EA-B1DB-4BEB-A8A6-691C2EB6ABBD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01G-D3D12HelloTransformations", "01G-D3D12HelloTransformations\01G-D3D12HelloTransformations.vcxproj", "{6EACA2EA-B1DB-4BEB-A8A6-691C2EB6ABBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
