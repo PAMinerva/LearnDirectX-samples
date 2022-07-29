@@ -9,7 +9,7 @@ then give the following tutorial series a chance: <br />
 Youtube Channel: [P. A. Minerva](https://www.youtube.com/channel/UCbIj8FkdUnF4uNypTPsuzpA) <br /> <br />
 
 ## Samples
-### [07-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/07-D3D12HelloTransformations)
+### [01.G-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/01G-D3D12HelloTransformations)
 <!---
 ![](images/camera.gif) <br /><br />
 -->
