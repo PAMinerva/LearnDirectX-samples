@@ -1,4 +1,4 @@
-# LearnDirectX-Tutorial
+# Learn DirectX Tutorial Series
 ## Description
 This repository hosts the code for my DirectX 12 tutorial series (you can find the tutorials in the wiki).<br />
 
