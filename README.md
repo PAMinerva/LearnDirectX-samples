@@ -4,7 +4,7 @@ This repository contains both the code samples and tutorials to follow my Direct
 
 If you are looking for a comprehensive, updated resource to learn how to program with DirectX 12 from scratch, then give the following tutorial series a chance:
 
-[Learn DirectX](https://github.com/PAMinerva/LearnDirectX-Tutorial/wiki) <br />
+[Learn DirectX 12 from code samples](https://github.com/PAMinerva/LearnDirectX-Tutorial/wiki) <br />
 
 <br>
 
