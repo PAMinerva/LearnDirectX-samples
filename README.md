@@ -2,8 +2,7 @@
 ## Description
 Repository of [Learn DirectX](https://www.learndirectx.net/) <br />
 
-If you are looking for a comprehensive, updated resource to learn how to program with DirectX 12 from scratch, <br />
-then give the following tutorial series a chance: <br />
+If you are looking for a comprehensive, updated resource to learn how to program with DirectX 12 from scratch, then give the following tutorial series a chance: <br />
 [Learn DirectX](https://www.learndirectx.net/) <br />
 
 If you prefer dark themes, take a look at the wiki (WIP). <br />
