@@ -1,12 +1,12 @@
 # LearnDirectX-Tutorial
 ## Description
-Supplemental samples for [Learn DirectX](https://www.learndirectx.net/) <br />
+Repository of [Learn DirectX](https://www.learndirectx.net/) <br />
 
 If you are looking for a comprehensive, updated resource to learn how to program with DirectX 12 from scratch, <br />
 then give the following tutorial series a chance: <br />
 [Learn DirectX](https://www.learndirectx.net/) <br />
 
-Youtube Channel: [P. A. Minerva](https://www.youtube.com/channel/UCbIj8FkdUnF4uNypTPsuzpA) <br /> <br />
+If you prefer dark themes, take a look at the wiki. <br />
 
 ## Samples
 ### [01.G-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/01G-D3D12HelloTransformations)
