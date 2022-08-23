@@ -1,4 +1,4 @@
-# LearnDirectX-Samples
+# LearnDirectX-Tutorial
 ## Description
 Supplemental samples for [Learn DirectX](https://www.learndirectx.net/) <br />
 
