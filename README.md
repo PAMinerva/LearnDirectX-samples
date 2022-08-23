@@ -1,6 +1,6 @@
 # LearnDirectX-Tutorial
 ## Description
-This repository contains both the code samples and tutorials to follow my DirectX 12 tutorial series.<br />
+This repository contains the code samples for my DirectX 12 tutorial series (you can find the tutorials in the wiki).<br />
 
 If you are looking for a comprehensive, updated resource to learn how to program with DirectX 12 from scratch, then give the following tutorial series a chance:
 
