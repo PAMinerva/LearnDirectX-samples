@@ -6,7 +6,7 @@ If you are looking for a comprehensive, updated resource to learn how to program
 then give the following tutorial series a chance: <br />
 [Learn DirectX](https://www.learndirectx.net/) <br />
 
-If you prefer dark themes, take a look at the wiki. <br />
+If you prefer dark themes, take a look at the wiki (WIP). <br />
 
 <br>
 
