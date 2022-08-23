@@ -8,6 +8,8 @@ then give the following tutorial series a chance: <br />
 
 If you prefer dark themes, take a look at the wiki. <br />
 
+<br>
+
 ## Samples
 ### [01.G-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/01G-D3D12HelloTransformations)
 <!---
