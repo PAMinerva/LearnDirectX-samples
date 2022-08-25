@@ -6,7 +6,7 @@ This repository hosts the code for the tutorial series you can find in the wiki:
 <br>
 
 ***
-As you can see, each tutorial is almost comparable with a book chapter. Writing tutorials with a good level of details takes a fair amount of time and effort. <br>
+As you can see, each tutorial is almost comparable with a book chapter. Writing tutorials with a good level of detail takes a fair amount of time and effort. <br>
 If you like this project, or if you have found it somewhat helpful, please consider supporting further development by clicking on the image below. Whether a small tip, a one time donation, or a recurring payment, it's all welcome! Thank you very much already! <br><br>
 
 <a href="https://ko-fi.com/paminerva">
