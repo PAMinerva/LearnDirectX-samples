@@ -6,6 +6,22 @@ This repository hosts the code for the tutorial series you can find in the wiki:
 
 <br>
 
+***
+As you might have noticed, each tutorial is almost comparable with a book chapter.  <br>
+Writing tutorials with a good level of details takes a fair amount of time and effort. <br>
+If you like this project, or if you have found it somewhat useful, please consider to support further development by clicking on the "Sponsor" button on top of this repository, or on the image below. <br>
+Whether a small tip, a one time donation, or a recurring payment, it's all welcome! Thank you very much already! <br><br>
+
+<a href="https://ko-fi.com/paminerva">
+   <img alt="Ko-fi" src="https://raw.githubusercontent.com/wiki/PAMinerva/LearnDirectX-Tutorial/images/ko-fi4.png">
+</a>
+
+<br>
+
+<br>
+
+<br>
+
 ## Additional Samples
 ### [01.G-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/01G-D3D12HelloTransformations)
 <!---
