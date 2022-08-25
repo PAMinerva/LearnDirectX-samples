@@ -3,7 +3,6 @@
 This repository hosts the code for the tutorial series you can find in the wiki:.<br />
 
 [Learn DirectX 12 from code samples](https://github.com/PAMinerva/LearnDirectX-Tutorial/wiki) <br />
-
 <br>
 
 ***
