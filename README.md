@@ -1,6 +1,6 @@
 # Learn DirectX 12 from code samples
 ## Description
-This repository hosts the code of additional samples I use to write the online tutorials you can find in the wiki:.<br />
+This repository hosts the code of additional samples for the tutorial series you can find in the wiki:.<br />
 
 [Learn DirectX 12 from code samples](https://github.com/PAMinerva/LearnDirectX-Tutorial/wiki) <br />
 <br>
