@@ -14,7 +14,7 @@ If you like this project, or if you find it somewhat helpful, please consider su
 <br>
 
 ## Additional Samples
-### [01.G-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/01G-D3D12HelloTransformations)
+### [01.G-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01G-D3D12HelloTransformations)
 <!---
 ![](images/camera.gif) <br /><br />
 -->
