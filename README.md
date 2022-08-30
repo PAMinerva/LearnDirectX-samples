@@ -21,6 +21,5 @@ If you like this project, or if you find it somewhat helpful, please consider su
 <img src="images/07.gif" alt="camera" width="300"/>  <br /><br /><br />
 
 ## Credits
-* https://github.com/microsoft/DirectX-Graphics-Samples <br />
-* https://github.com/microsoft/Xbox-ATG-Samples <br />
+* https://github.com/microsoft <br />
 * https://github.com/walbourn
