@@ -18,6 +18,28 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="shaders.hlsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy %(Identity) "$(OutDir)" &gt; NUL</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\%(Identity)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D3D12HelloLighting.h" />
+    <ClInclude Include="d3dx12.h" />
+    <ClInclude Include="DXSample.h" />
+    <ClInclude Include="DXSampleHelper.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Win32Application.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D3D12HelloLighting.cpp" />
+    <ClCompile Include="DXSample.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Win32Application.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -130,28 +152,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <CustomBuild Include="..\..\..\Project1\shaders.hlsl">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">copy %(Identity) "$(OutDir)" &gt; NUL</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)\%(Identity)</Outputs>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\Project1\D3D12HelloLighting.cpp" />
-    <ClCompile Include="..\..\..\Project1\DXSample.cpp" />
-    <ClCompile Include="..\..\..\Project1\Main.cpp" />
-    <ClCompile Include="..\..\..\Project1\stdafx.cpp" />
-    <ClCompile Include="..\..\..\Project1\Win32Application.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\Project1\D3D12HelloLighting.h" />
-    <ClInclude Include="..\..\..\Project1\d3dx12.h" />
-    <ClInclude Include="..\..\..\Project1\DXSample.h" />
-    <ClInclude Include="..\..\..\Project1\DXSampleHelper.h" />
-    <ClInclude Include="..\..\..\Project1\stdafx.h" />
-    <ClInclude Include="..\..\..\Project1\Win32Application.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
