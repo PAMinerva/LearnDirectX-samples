@@ -51,7 +51,7 @@ PS_INPUT TriangleVS( VS_INPUT input )
 
 
 //--------------------------------------------------------------------------------------
-// Name: TrianglePS
+// Name: LambertPS
 // Desc: Pixel shader applying Lambertian lighting from two lights
 //--------------------------------------------------------------------------------------
 float4 LambertPS( PS_INPUT input ) : SV_Target
@@ -69,7 +69,7 @@ float4 LambertPS( PS_INPUT input ) : SV_Target
 
 
 //--------------------------------------------------------------------------------------
-// Name: TriangleSolidColorPS
+// Name: SolidColorPS
 // Desc: Pixel shader applying solid color
 //--------------------------------------------------------------------------------------
 float4 SolidColorPS( PS_INPUT input ) : SV_Target
