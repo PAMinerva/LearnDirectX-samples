@@ -14,8 +14,6 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 
 ## Additional Samples
 
-<br>
-
 <table>
  <tr>
   <td><a href="https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01G-D3D12HelloTransformations">01.G-D3D12HelloTransformations</a></td>
@@ -34,9 +32,6 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 </table>
 
 <br>
-
-### 02.A-D3D12Blending (work in progress)
-<img src="images/Blending.gif" alt="camera" width="300"/>  <br /><br /><br />
 
 ## Credits
 * https://github.com/microsoft <br />
