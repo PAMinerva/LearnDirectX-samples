@@ -24,11 +24,11 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
   </tr>
   <tr>
   <td>02.A-D3D12Blending (work in progress)</td>
-  <!--- <td> </td> -->
+  <td>01.H-D3D12HelloLighting</td>
  </tr>
  <tr>
   <td><img src="images/Blending.gif"></td>
-  <!--- <td> </td> -->
+  <td><img src="images/Blending.gif"></td>
  </tr>
 </table>
 
