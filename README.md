@@ -13,10 +13,11 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 
 ## Additional Samples
 
-| 01.G-D3D12HelloTransformations | 01.H-D3D12HelloLighting |
-|---|---|
 | ![](images/07.gif)  |  ![](images/HelloLighting.gif) |
+|---|---|
+| 01.G-D3D12HelloTransformations | 01.H-D3D12HelloLighting |
 | ![](images/Blending.gif) | &nbsp; |
+| 02.A-D3D12Blending | &nbsp; |
 
 <table>
   <tr>
