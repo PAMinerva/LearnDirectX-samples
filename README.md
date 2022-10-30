@@ -13,21 +13,23 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 
 ## Additional Samples
 
-| ![](images/07.gif)  |  ![](images/HelloLighting.gif) |
-|---|---|
-| 01.G-D3D12HelloTransformations | 01.H-D3D12HelloLighting |
-| ![](images/Blending.gif) | &nbsp; |
-| 02.A-D3D12Blending | &nbsp; |
-
 <table>
   <tr>
     <td>01.G-D3D12HelloTransformations</td>
-    <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+    <td>01.G-D3D12HelloTransformations</td>
      </tr>
   <tr>
     <td><img src="images/07.gif"></td>
     <td><img src="images/HelloLighting.gif"></td>
   </tr>
+  <tr>
+  <td>02.A-D3D12Blending (work in progress)</td>
+  <!--- <td> </td> -->
+ </tr>
+ <tr>
+  <td><img src="images/Blending.gif"></td>
+  <!--- <td> </td> -->
+ </tr>
 </table>
 
 <table>
