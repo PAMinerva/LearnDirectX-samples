@@ -15,6 +15,14 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 
 <table>
  <tr>
+  <td>01.G-D3D12HelloTransformations</td>
+  <td>01.H-D3D12HelloLighting</td>
+ </tr>
+ <tr>
+  <td><img src="images/07.gif"></td>
+  <td><img src="images/HelloLighting.gif"></td>
+ </tr>
+ <tr>
   <td>02.A-D3D12Blending (work in progress)</td>
   <td>02.A-D3D12Blending (work in progress)</td>
   <td>02.A-D3D12Blending (work in progress)</td>
