@@ -22,10 +22,12 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 <br>
 
 ### [01.H-D3D12HelloLighting](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01H-D3D12HelloLighting)
-<!---
-![](images/HelloLighting.gif) <br /><br />
--->
 <img src="images/HelloLighting.gif" alt="camera" width="300"/>  <br /><br /><br />
+
+<br>
+
+### 02.A-D3D12Blending (work in progress)
+<img src="images/Blending.gif" alt="camera" width="300"/>  <br /><br /><br />
 
 ## Credits
 * https://github.com/microsoft <br />
