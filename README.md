@@ -14,8 +14,8 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 ## Additional Samples
 
 | 01.G-D3D12HelloTransformations | 01.H-D3D12HelloLighting |
-| ![](images/07.gif)  |  ![](images/HelloLighting.gif) |
 |---|---|
+| ![](images/07.gif)  |  ![](images/HelloLighting.gif) |
 | ![](images/Blending.gif) | &nbsp; |
 
 <table>
