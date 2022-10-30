@@ -15,8 +15,9 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 
 |<a href="https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01G-D3D12HelloTransformations">01.G-D3D12HelloTransformations</a>|<a href="https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01H-D3D12HelloLighting">01.H-D3D12HelloLighting</a>|
 |---|---|
-|![](images/07.gif)|images/HelloLighting.gif|
+|![](images/07.gif)|![](images/HelloLighting.gif)|
 |02.A-D3D12Blending (work in progress)|&nbsp;|
+|![](images/Blending.gif)|&nbsp;|
 
 <table>
  <tr>
