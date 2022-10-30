@@ -21,7 +21,7 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
  </tr>
  <tr>
   <td><img src="images/07.gif"></td>
-  <td><img src="images/HelloLighting.gif"></td>
+  <td><img src="images/07.gif"></td>
   <!--- <td> </td> -->
  </tr>
 </table>
