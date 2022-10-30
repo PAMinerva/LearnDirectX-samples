@@ -16,7 +16,7 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 <table>
   <tr>
     <td><a href="https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01G-D3D12HelloTransformations">01.G-D3D12HelloTransformations</td>
-     <td><a href="https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01H-D3D12HelloLighting">01.H-D3D12HelloLighting</a></td>
+              <td><a href="https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01H-D3D12HelloLighting">01.H-D3D12HelloLighting</a></td>
      </tr>
   <tr>
     <td><img src="images/07.gif"></td>
