@@ -24,6 +24,8 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
  </tr>
  <tr>
   <td>02.A-D3D12Blending (work in progress)</td>
+  <td>02.A-D3D12Blending (work in progress)</td>
+  <td>02.A-D3D12Blending (work in progress)</td>
   <!--- <td> </td> -->
  </tr>
  <tr>
