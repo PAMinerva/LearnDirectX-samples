@@ -13,6 +13,22 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 <br>
 
 ## Additional Samples
+
+<br>
+
+<table>
+  <tr>
+    <td>01.G-D3D12HelloTransformations</td>
+     <td>01.H-D3D12HelloLighting</td>
+     </tr>
+  <tr>
+    <td><img src="images/07.gif"></td>
+    <td><img src="images/HelloLighting.gif"></td>
+  </tr>
+</table>
+
+<br>
+
 ### [01.G-D3D12HelloTransformations](https://github.com/PAMinerva/LearnDirectX-Samples/tree/master/samples/01G-D3D12HelloTransformations)
 <!---
 ![](images/camera.gif) <br /><br />
