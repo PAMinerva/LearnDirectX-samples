@@ -14,7 +14,7 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 ## Additional Samples
 
 | ![](images/07.gif)  |  ![](images/HelloLighting.gif) |
-|---|---|---|
+|---|---|
 | ![](images/Blending.gif) | &nbsp; |
 
 <table>
