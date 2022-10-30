@@ -16,7 +16,7 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 <table>
   <tr>
     <td>01.G-D3D12HelloTransformations</td>
-    <td>01.G-D3D12HelloTransformations</td>
+    <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
      </tr>
   <tr>
     <td><img src="images/07.gif"></td>
