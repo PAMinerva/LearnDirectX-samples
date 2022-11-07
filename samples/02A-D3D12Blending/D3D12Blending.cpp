@@ -527,7 +527,7 @@ void D3D12Blending::PopulateCommandList()
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
 
-    // Render each light
+    // Draw the quads
     m_commandList->SetPipelineState(m_blendingPipelineState.Get());
 
     for (int m = 0; m < 2; ++m)
