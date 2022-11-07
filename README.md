@@ -23,7 +23,7 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
   <td><img src="images/HelloLighting.gif"></td>
  </tr>
  <tr>
-  <td>02.A-D3D12Blending (work in progress)</td>
+  <td><a href="https://github.com/PAMinerva/LearnDirectX/tree/master/samples/02A-D3D12Blending">02.A-D3D12Blending</a></td>
   <!-- <td> </td>  -->
  </tr>
  <tr>
