@@ -539,7 +539,7 @@ void D3D12Blending::PopulateCommandList()
         // Set OffsetZ = (-5.0f + (m * 2)) to draw quads in reverse order.
         XMMATRIX translateMatrix = XMMatrixTranslation((-1.0f + (m * 2)), 1.0f, (-3.0f - (m * 2)));
 
-        // Update the world variable to reflect the current light
+        // Update world matrix and output color.
         cbParameters.worldMatrix = XMMatrixTranspose(rotationMatrix * (scaleMatrix * translateMatrix));
         cbParameters.outputColor = (m == 0) ? XMFLOAT4(1.0f, 0.0f, 0.0f, 0.4f) : XMFLOAT4(1.0f, 1.0f, 1.0f, 0.3f);
 
