@@ -532,7 +532,7 @@ void D3D12Blending::PopulateCommandList()
 
     for (int m = 0; m < 2; ++m)
     {
-        // Update the World matrix of the quads
+        // Compute the World matrix of the quads
         XMMATRIX scaleMatrix = XMMatrixScaling(2.0f, 2.0f, 2.0f);
         XMMATRIX rotationMatrix = XMMatrixRotationX(-XM_PIDIV2);
         // Translation to order quads in decreasing order from the camera. 
