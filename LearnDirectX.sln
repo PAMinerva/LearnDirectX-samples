@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01G-D3D12HelloTransformatio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01H-D3D12HelloLighting", "samples\01H-D3D12HelloLighting\01H-D3D12HelloLighting.vcxproj", "{F09F2F5A-3BD3-46F0-979C-E0ADAEB69C2D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02A-D3D12Blending", "samples\02A-D3D12Blending\02A-D3D12Blending.vcxproj", "{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{F09F2F5A-3BD3-46F0-979C-E0ADAEB69C2D}.Release|x64.Build.0 = Release|x64
 		{F09F2F5A-3BD3-46F0-979C-E0ADAEB69C2D}.Release|x86.ActiveCfg = Release|Win32
 		{F09F2F5A-3BD3-46F0-979C-E0ADAEB69C2D}.Release|x86.Build.0 = Release|Win32
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Debug|x64.ActiveCfg = Debug|x64
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Debug|x64.Build.0 = Debug|x64
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Debug|x86.ActiveCfg = Debug|Win32
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Debug|x86.Build.0 = Debug|Win32
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Release|x64.ActiveCfg = Release|x64
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Release|x64.Build.0 = Release|x64
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Release|x86.ActiveCfg = Release|Win32
+		{7BC98AA7-DEBD-43AF-8285-690D4742F0E5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
