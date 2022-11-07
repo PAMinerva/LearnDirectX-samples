@@ -522,7 +522,7 @@ void D3D12Blending::PopulateCommandList()
     m_commandList->IASetVertexBuffers(0, 1, &m_vertexBufferView);
     m_commandList->IASetIndexBuffer(&m_indexBufferView);
 
-    // Draw the first cube
+    // Draw the cube
     m_commandList->DrawIndexedInstanced(36, 1, 0, 0, 0);
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
@@ -549,7 +549,7 @@ void D3D12Blending::PopulateCommandList()
         // Bind the constants to the shader
         m_commandList->SetGraphicsRootConstantBufferView(0, baseGpuAddress);
 
-        // Draw the second cube
+        // Draw a quad
         m_commandList->DrawIndexedInstanced(6, 1, 0, 0, 0);
         baseGpuAddress += sizeof(PaddedConstantBuffer);
         ++constantBufferIndex;
