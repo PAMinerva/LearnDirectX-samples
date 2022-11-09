@@ -278,7 +278,7 @@ void D3D12Blending::LoadAssets()
 
         // Create the Pipeline State Object for drawing transparent objects
         {
-            // Enable alpha blending
+            // Use alpha blending
             CD3DX12_BLEND_DESC blendDesc(D3D12_DEFAULT);
             blendDesc.RenderTarget[0].BlendEnable = TRUE;
             blendDesc.RenderTarget[0].SrcBlend = D3D12_BLEND_SRC_ALPHA;
