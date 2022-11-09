@@ -62,12 +62,12 @@ private:
     // We'll allocate space for several of these and they will need to be padded for alignment.
     static_assert(sizeof(ConstantBuffer) == 208, "Checking the size here.");
 
-    // D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT < 272 < 2 * D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT
+    // 208 < D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT
     // Create a union with the correct size and enough room for one ConstantBuffer
     union PaddedConstantBuffer
     {
         ConstantBuffer constants;
-        uint8_t bytes[2 * D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT];
+        uint8_t bytes[D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT];
     };
 
     // Pipeline objects.
