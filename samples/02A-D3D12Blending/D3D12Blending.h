@@ -70,6 +70,9 @@ private:
         uint8_t bytes[D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT];
     };
 
+    // Check the exact size of the PaddedConstantBuffer to make sure it will align properly
+    static_assert(sizeof(PaddedConstantBuffer) == D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT, "PaddedConstantBuffer is not aligned properly");
+
     // Pipeline objects.
     CD3DX12_VIEWPORT m_viewport;
     CD3DX12_RECT m_scissorRect;
