@@ -51,12 +51,12 @@ private:
 
     struct ConstantBuffer
     {
-        XMMATRIX worldMatrix;        // 64 bytes
-        XMMATRIX viewMatrix;         // 64 bytes
-        XMMATRIX projectionMatrix;   // 64 bytes
-        XMVECTOR lightDir[2];        // 32 bytes
-        XMVECTOR lightColor[2];      // 32 bytes
-        XMVECTOR outputColor;        // 16 bytes
+        XMFLOAT4X4 worldMatrix;        // 64 bytes
+        XMFLOAT4X4 viewMatrix;         // 64 bytes
+        XMFLOAT4X4 projectionMatrix;   // 64 bytes
+        XMFLOAT4 lightDirs[2];         // 32 bytes
+        XMFLOAT4 lightColors[2];       // 32 bytes
+        XMFLOAT4 outputColor;          // 16 bytes
     };
 
     // We'll allocate space for several of these and they will need to be padded for alignment.
@@ -114,12 +114,12 @@ private:
 
     // These computed values will be loaded into a ConstantBuffer
     // during Render
-    DirectX::XMFLOAT4X4 m_worldMatrix;
-    DirectX::XMFLOAT4X4 m_viewMatrix;
-    DirectX::XMFLOAT4X4 m_projectionMatrix;
-    DirectX::XMFLOAT4 m_lightDirs[2];
-    DirectX::XMFLOAT4 m_lightColors[2];
-    DirectX::XMFLOAT4 m_outputColor;
+    XMMATRIX m_worldMatrix;
+    XMMATRIX m_viewMatrix;
+    XMMATRIX m_projectionMatrix;
+    XMVECTOR m_lightDirs[2];
+    XMVECTOR m_lightColors[2];
+    XMVECTOR m_outputColor;
 
     void LoadPipeline();
     void LoadAssets();

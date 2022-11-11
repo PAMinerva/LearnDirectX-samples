@@ -25,26 +25,26 @@ m_fenceValues{},
 m_curRotationAngleRad(0.0f)
 {
     // Initialize the world matrix
-    XMStoreFloat4x4(&m_worldMatrix, XMMatrixIdentity());
+    m_worldMatrix = XMMatrixIdentity();
 
     // Initialize the view matrix
     static const XMVECTORF32 c_eye = { 0.0f, 3.0f, -10.0f, 0.0f };
     static const XMVECTORF32 c_at = { 0.0f, 1.0f, 0.0f, 0.0f };
     static const XMVECTORF32 c_up = { 0.0f, 1.0f, 0.0f, 0.0 };
-    XMStoreFloat4x4(&m_viewMatrix, XMMatrixLookAtLH(c_eye, c_at, c_up));
+    m_viewMatrix = XMMatrixLookAtLH(c_eye, c_at, c_up);
 
     // Initialize the projection matrix
-    XMStoreFloat4x4(&m_projectionMatrix, XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f));
+    m_projectionMatrix = XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f);
 
     // Initialize the lighting parameters
-    m_lightDirs[0] = XMFLOAT4(-0.577f, 0.577f, -0.577f, 0.0f);
-    m_lightDirs[1] = XMFLOAT4(0.0f, 0.0f, -1.0f, 0.0f);
+    m_lightDirs[0] = XMVectorSet(-0.577f, 0.577f, -0.577f, 0.0f);
+    m_lightDirs[1] = XMVectorSet(0.0f, 0.0f, -1.0f, 0.0f);
 
-    m_lightColors[0] = XMFLOAT4(0.9f, 0.9f, 0.9f, 1.0f);
-    m_lightColors[1] = XMFLOAT4(0.8f, 0.0f, 0.0f, 1.0f);
+    m_lightColors[0] = XMVectorSet(0.9f, 0.9f, 0.9f, 1.0f);
+    m_lightColors[1] = XMVectorSet(0.8f, 0.0f, 0.0f, 1.0f);
 
     // Initialize the scene output color
-    m_outputColor = XMFLOAT4(0, 0, 0, 0);
+    m_outputColor = XMVectorSet(0, 0, 0, 0);
 }
 
 void D3D12HelloLighting::OnInit()
@@ -454,16 +454,16 @@ void D3D12HelloLighting::OnUpdate()
     }
 
     // Rotate the cube around the Y-axis
-    XMStoreFloat4x4(&m_worldMatrix, XMMatrixRotationY(m_curRotationAngleRad));
+    m_worldMatrix = XMMatrixRotationY(m_curRotationAngleRad);
 
     // Initialize the direction of the second light (the rotating one)
-    m_lightDirs[1] = XMFLOAT4(0.0f, 0.0f, -1.0f, 0.0f);
+    m_lightDirs[1] = XMVectorSet(0.0f, 0.0f, -1.0f, 0.0f);
 
     // Rotate the second light around the origin
     XMMATRIX rotate = XMMatrixRotationY(-2.0f * m_curRotationAngleRad);
-    XMVECTOR lightDir = XMLoadFloat4(&m_lightDirs[1]);
+    XMVECTOR lightDir = m_lightDirs[1];
     lightDir = XMVector3Transform(lightDir, rotate);
-    XMStoreFloat4(&m_lightDirs[1], lightDir);
+    m_lightDirs[1] = lightDir;
 }
 
 // Render the scene.
@@ -517,15 +517,15 @@ void D3D12HelloLighting::PopulateCommandList()
     ConstantBuffer cbParameters = {};
 
     // Shaders compiled with default row-major matrices
-    cbParameters.worldMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_worldMatrix));
-    cbParameters.viewMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_viewMatrix));
-    cbParameters.projectionMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_projectionMatrix));
+    XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(m_worldMatrix));
+    XMStoreFloat4x4(&cbParameters.viewMatrix, XMMatrixTranspose(m_viewMatrix));
+    XMStoreFloat4x4(&cbParameters.projectionMatrix, XMMatrixTranspose(m_projectionMatrix));
 
-    cbParameters.lightDir[0] = XMLoadFloat4(&m_lightDirs[0]);
-    cbParameters.lightDir[1] = XMLoadFloat4(&m_lightDirs[1]);
-    cbParameters.lightColor[0] = XMLoadFloat4(&m_lightColors[0]);
-    cbParameters.lightColor[1] = XMLoadFloat4(&m_lightColors[1]);
-    cbParameters.outputColor = XMLoadFloat4(&m_outputColor);
+    XMStoreFloat4(&cbParameters.lightDirs[0], m_lightDirs[0]);
+    XMStoreFloat4(&cbParameters.lightDirs[1], m_lightDirs[1]);
+    XMStoreFloat4(&cbParameters.lightColors[0], m_lightColors[0]);
+    XMStoreFloat4(&cbParameters.lightColors[1], m_lightColors[1]);
+    XMStoreFloat4(&cbParameters.outputColor, m_outputColor);
 
     // Set the constants for the first draw call
     memcpy(&m_mappedConstantData[constantBufferIndex], &cbParameters, sizeof(ConstantBuffer));
@@ -562,13 +562,13 @@ void D3D12HelloLighting::PopulateCommandList()
 
     for (int m = 0; m < 2; ++m)
     {
-        XMMATRIX lightMatrix = XMMatrixTranslationFromVector(5.0f * cbParameters.lightDir[m]);
+        XMMATRIX lightMatrix = XMMatrixTranslationFromVector(5.0f * m_lightDirs[m]);
         XMMATRIX lightScaleMatrix = XMMatrixScaling(0.2f, 0.2f, 0.2f);
         lightMatrix = lightScaleMatrix * lightMatrix;
 
         // Update the world variable to reflect the current light
-        cbParameters.worldMatrix = XMMatrixTranspose(lightMatrix);
-        cbParameters.outputColor = cbParameters.lightColor[m];
+        XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(lightMatrix));
+        cbParameters.outputColor = cbParameters.lightColors[m];
 
         // Set the constants for the draw call
         memcpy(&m_mappedConstantData[constantBufferIndex], &cbParameters, sizeof(ConstantBuffer));
