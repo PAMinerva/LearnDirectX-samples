@@ -436,6 +436,7 @@ void D3D12HelloTransformations::OnDestroy()
     CloseHandle(m_fenceEvent);
 }
 
+// Record commands in command list
 void D3D12HelloTransformations::PopulateCommandList()
 {
     // Command list allocators can only be reset when the associated 

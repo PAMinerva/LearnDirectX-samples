@@ -461,9 +461,7 @@ void D3D12HelloLighting::OnUpdate()
 
     // Rotate the second light around the origin
     XMMATRIX rotate = XMMatrixRotationY(-2.0f * m_curRotationAngleRad);
-    XMVECTOR lightDir = m_lightDirs[1];
-    lightDir = XMVector3Transform(lightDir, rotate);
-    m_lightDirs[1] = lightDir;
+    m_lightDirs[1] = XMVector3Transform(m_lightDirs[1], rotate);
 }
 
 // Render the scene.

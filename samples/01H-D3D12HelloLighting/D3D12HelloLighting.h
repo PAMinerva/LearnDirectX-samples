@@ -43,12 +43,14 @@ private:
     // may result in noticeable latency in your app.
     static const UINT FrameCount = 2;
 
+    // Vertex attributes
     struct Vertex
     {
         XMFLOAT3 position;
         XMFLOAT3 normal;
     };
 
+    // Constant buffer
     struct ConstantBuffer
     {
         XMFLOAT4X4 worldMatrix;        // 64 bytes
