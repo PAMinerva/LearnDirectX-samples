@@ -25,16 +25,16 @@ m_fenceValues{},
 m_curRotationAngleRad(0.0f)
 {
     // Initialize the world matrix
-    XMStoreFloat4x4(&m_worldMatrix, XMMatrixIdentity());
+    m_worldMatrix = XMMatrixIdentity();
 
     // Initialize the view matrix
     static const XMVECTORF32 c_eye = { 0.0f, 3.0f, -10.0f, 0.0f };
     static const XMVECTORF32 c_at = { 0.0f, 1.0f, 0.0f, 0.0f };
     static const XMVECTORF32 c_up = { 0.0f, 1.0f, 0.0f, 0.0 };
-    XMStoreFloat4x4(&m_viewMatrix, XMMatrixLookAtLH(c_eye, c_at, c_up));
+    m_viewMatrix = XMMatrixLookAtLH(c_eye, c_at, c_up);
 
     // Initialize the projection matrix
-    XMStoreFloat4x4(&m_projectionMatrix, XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f));
+    m_projectionMatrix = XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f);
 }
 
 void D3D12HelloTransformations::OnInit()
@@ -408,7 +408,7 @@ void D3D12HelloTransformations::OnUpdate()
     }
 
     // Rotate the cube around the Y-axis
-    XMStoreFloat4x4(&m_worldMatrix, XMMatrixRotationY(m_curRotationAngleRad));
+    m_worldMatrix = XMMatrixRotationY(m_curRotationAngleRad);
 }
 
 // Render the scene.
@@ -462,9 +462,9 @@ void D3D12HelloTransformations::PopulateCommandList()
     ConstantBuffer cbParameters = {};
 
     // Shaders compiled with default row-major matrices
-    cbParameters.worldMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_worldMatrix));
-    cbParameters.viewMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_viewMatrix));
-    cbParameters.projectionMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_projectionMatrix));
+    XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(m_worldMatrix));
+    XMStoreFloat4x4(&cbParameters.viewMatrix, XMMatrixTranspose(m_viewMatrix));
+    XMStoreFloat4x4(&cbParameters.projectionMatrix, XMMatrixTranspose(m_projectionMatrix));
 
     // Set the constants for the first draw call
     memcpy(&m_mappedConstantData[constantBufferIndex], &cbParameters, sizeof(ConstantBuffer));
@@ -501,7 +501,7 @@ void D3D12HelloTransformations::PopulateCommandList()
     XMMATRIX translateMatrix = XMMatrixTranslation(0.0f, 0.0f, -5.0f);
 
     // Update the world variable to reflect the current light
-    cbParameters.worldMatrix = XMMatrixTranspose((scaleMatrix * translateMatrix) * rotationMatrix);
+    XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose((scaleMatrix * translateMatrix) * rotationMatrix));
 
     // Set the constants for the draw call
     memcpy(&m_mappedConstantData[constantBufferIndex], &cbParameters, sizeof(ConstantBuffer));

@@ -51,10 +51,10 @@ private:
 
     struct ConstantBuffer
     {
-        XMMATRIX worldMatrix;        // 64 bytes
-        XMMATRIX viewMatrix;         // 64 bytes
-        XMMATRIX projectionMatrix;   // 64 bytes
-        XMFLOAT4 padding[4];         // Padding so the constant buffer is 256-byte aligned.
+        XMFLOAT4X4 worldMatrix;        // 64 bytes
+        XMFLOAT4X4 viewMatrix;         // 64 bytes
+        XMFLOAT4X4 projectionMatrix;   // 64 bytes
+        XMFLOAT4 padding[4];           // Padding so the constant buffer is 256-byte aligned.
     };
     static_assert((sizeof(ConstantBuffer) % 256) == 0, "Constant Buffer size must be 256-byte aligned");
 
@@ -98,9 +98,9 @@ private:
 
     // These computed values will be loaded into a ConstantBuffer
     // during Render
-    DirectX::XMFLOAT4X4 m_worldMatrix;
-    DirectX::XMFLOAT4X4 m_viewMatrix;
-    DirectX::XMFLOAT4X4 m_projectionMatrix;
+    XMMATRIX m_worldMatrix;
+    XMMATRIX m_viewMatrix;
+    XMMATRIX m_projectionMatrix;
 
     void LoadPipeline();
     void LoadAssets();
