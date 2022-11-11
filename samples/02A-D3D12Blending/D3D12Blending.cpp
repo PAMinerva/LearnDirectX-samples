@@ -25,19 +25,19 @@ D3D12Blending::D3D12Blending(UINT width, UINT height, std::wstring name) :
     m_curRotationAngleRad(0.0f)
 {
     // Initialize the world matrix
-    XMStoreFloat4x4(&m_worldMatrix, XMMatrixIdentity());
+    m_worldMatrix = XMMatrixIdentity();
 
     // Initialize the view matrix
     static const XMVECTORF32 c_eye = { 0.0f, 5.0f, -15.0f, 0.0f };
     static const XMVECTORF32 c_at = { 0.0f, 1.0f, 0.0f, 0.0f };
     static const XMVECTORF32 c_up = { 0.0f, 1.0f, 0.0f, 0.0 };
-    XMStoreFloat4x4(&m_viewMatrix, XMMatrixLookAtLH(c_eye, c_at, c_up));
+    m_viewMatrix = XMMatrixLookAtLH(c_eye, c_at, c_up);
 
     // Initialize the projection matrix
-    XMStoreFloat4x4(&m_projectionMatrix, XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f));
+    m_projectionMatrix = XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f);
 
     // Initialize the scene output color
-    m_outputColor = XMFLOAT4(0.0f, 0.0f, 0.0f, 0.0f);
+    m_outputColor = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
 }
 
 void D3D12Blending::OnInit()
@@ -440,7 +440,7 @@ void D3D12Blending::OnUpdate()
     }
 
     // Rotate the cube around the Y-axis
-    XMStoreFloat4x4(&m_worldMatrix, XMMatrixScaling(2.0f, 2.0f, 2.0f) * XMMatrixRotationY(m_curRotationAngleRad));
+    m_worldMatrix = XMMatrixScaling(2.0f, 2.0f, 2.0f) * XMMatrixRotationY(m_curRotationAngleRad);
 }
 
 // Render the scene.
@@ -494,9 +494,9 @@ void D3D12Blending::PopulateCommandList()
     ConstantBuffer cbParameters = {};
 
     // Shaders compiled with default row-major matrices
-    cbParameters.worldMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_worldMatrix));
-    cbParameters.viewMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_viewMatrix));
-    cbParameters.projectionMatrix = XMMatrixTranspose(XMLoadFloat4x4(&m_projectionMatrix));
+    XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(m_worldMatrix));
+    XMStoreFloat4x4(&cbParameters.viewMatrix, XMMatrixTranspose(m_viewMatrix));
+    XMStoreFloat4x4(&cbParameters.projectionMatrix, XMMatrixTranspose(m_projectionMatrix));
 
     // Set the constants for the first draw call
     memcpy(&m_mappedConstantData[constantBufferIndex], &cbParameters, sizeof(ConstantBuffer));
@@ -540,7 +540,7 @@ void D3D12Blending::PopulateCommandList()
         XMMATRIX translateMatrix = XMMatrixTranslation((-1.0f + (m * 2)), 1.0f, (-3.0f - (m * 2)));
 
         // Update world matrix and output color.
-        cbParameters.worldMatrix = XMMatrixTranspose(rotationMatrix * (scaleMatrix * translateMatrix));
+        XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(rotationMatrix * (scaleMatrix * translateMatrix)));
         cbParameters.outputColor = (m == 0) ? XMFLOAT4(1.0f, 0.0f, 0.0f, 0.4f) : XMFLOAT4(1.0f, 1.0f, 1.0f, 0.3f);
 
         // Set the constants for the draw call
