@@ -24,7 +24,7 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
  </tr>
  <tr>
   <td><a href="https://github.com/PAMinerva/LearnDirectX/tree/master/samples/02A-D3D12Blending">02.A - Blending</a></td>
-  <td>02.B - Stenciling (WIK)</td>
+  <td><a href="https://github.com/PAMinerva/LearnDirectX/tree/master/samples/02B-D3D12Stenciling">02.B - Stenciling</a></td>
   <!-- <td> </td>  -->
  </tr>
  <tr>
