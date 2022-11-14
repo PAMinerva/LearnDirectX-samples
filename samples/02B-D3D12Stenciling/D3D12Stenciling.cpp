@@ -766,7 +766,7 @@ void D3D12Stenciling::PopulateCommandList()
 
     // Update world matrix, light direction and output color to draw the shadow of the cube
     // reflected into the mirror.
-    XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(m_cubeWorldMatrix * S * shadowOffsetY* R));
+    XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(m_cubeWorldMatrix * S * shadowOffsetY * R));
     //XMStoreFloat4(&cbParameters.lightDir, m_lightDir);
     cbParameters.outputColor = XMFLOAT4(0.0f, 0.0f, 0.0f, 0.2f);
 
