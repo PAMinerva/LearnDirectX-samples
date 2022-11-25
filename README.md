@@ -2,9 +2,7 @@
 ## Description
 This repository hosts the code of additional samples for the tutorial series you can find in the wiki, or at the following link:<br />
 
-[Learn DirectX 12 from code samples](https://paminerva.github.io/docs/LearnDirectX/LearnDirectX) 
-
-<br>
+[Learn DirectX 12 from code samples](https://paminerva.github.io/docs/LearnDirectX/LearnDirectX)
 
 <br>
 
