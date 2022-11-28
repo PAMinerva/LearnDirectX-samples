@@ -315,7 +315,8 @@ void D3D12Stenciling::LoadAssets()
             depthdDesc.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ZERO;
             depthdDesc.StencilEnable = TRUE;
             // A pixel on the front face of a primitive will ALWAYS pass the stencil test, and the value in
-            // the corresponding texel of the stencil buffer will be REPLACEed with the stencil reference value.
+            // the corresponding texel of the stencil buffer will be REPLACEed with the stencil reference value
+            // if the pixel also passes the depth test.
             depthdDesc.FrontFace.StencilFailOp = D3D12_STENCIL_OP_KEEP;
             depthdDesc.FrontFace.StencilDepthFailOp = D3D12_STENCIL_OP_KEEP;
             depthdDesc.FrontFace.StencilPassOp = D3D12_STENCIL_OP_REPLACE;
@@ -335,8 +336,8 @@ void D3D12Stenciling::LoadAssets()
             depthdDesc.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL;
             // Enable both depth and stencil tests
             // A pixel on the front face of a primitive will pass the stencil test if the value
-            // of the corresponding texel of the stencil buffer is EQUAL to the stencil reference value,
-            // and in that case the texel KEEPs its value.
+            // of the corresponding texel of the stencil buffer is EQUAL to the stencil reference value.
+            // The texel KEEPs its value if the pixel also passes the depth test.
             depthdDesc.FrontFace.StencilPassOp = D3D12_STENCIL_OP_KEEP;
             depthdDesc.FrontFace.StencilFunc = D3D12_COMPARISON_FUNC_EQUAL;
 
@@ -360,8 +361,8 @@ void D3D12Stenciling::LoadAssets()
 
             // Both depth and stencil tests are used. To prevent double blending:
             // A pixel on the front face of a primitive will pass the stencil test if the value
-            // of the corresponding texel of the stencil buffer is EQUAL to the stencil reference value,
-            // and in that case the texel value in INCRemented.
+            // of the corresponding texel of the stencil buffer is EQUAL to the stencil reference value.
+            // The texel value is INCRemented if the pixel also passes the depth test.
             depthdDesc.FrontFace.StencilPassOp = D3D12_STENCIL_OP_INCR;
 
             psoDesc.PS = CD3DX12_SHADER_BYTECODE(solidColorPS.Get());
@@ -501,17 +502,17 @@ void D3D12Stenciling::LoadAssets()
             // Floor (6 indices: 36-41)
             0, 1, 2,
             0, 2, 3,
-            
+
             // Wall (18 indices: 42-59)
             0, 1, 2,
             0, 2, 3,
-            
+
             4, 5, 6,
             4, 6, 7,
-            
+
             1, 8, 9,
             1, 9, 6,
-            
+
             // Mirror (6 indices: 60-65)
             0, 1, 2,
             0, 2, 3
@@ -720,7 +721,7 @@ void D3D12Stenciling::PopulateCommandList()
 
     // Set PSO for reflected, non-illuminated objects (floor and shadow)
     m_commandList->SetPipelineState(m_reflectedSolidColorPipelineState.Get());
-    
+
     // Update world matrix and output color of the floor to reflect it with respect to the mirror
     XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(XMMatrixIdentity() * R));
     cbParameters.outputColor = XMFLOAT4(1.0f, 0.9f, 0.7f, 1.0f);
