@@ -764,10 +764,9 @@ void D3D12Stenciling::PopulateCommandList()
     // Set stencil ref. value to 1
     m_commandList->OMSetStencilRef(1);
 
-    // Update world matrix, light direction and output color to draw the shadow of the cube
+    // Update world matrix and output color to draw the shadow of the cube
     // reflected into the mirror.
     XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(m_cubeWorldMatrix * S * shadowOffsetY * R));
-    //XMStoreFloat4(&cbParameters.lightDir, m_lightDir);
     cbParameters.outputColor = XMFLOAT4(0.0f, 0.0f, 0.0f, 0.2f);
 
     // Set the constants for the draw call
