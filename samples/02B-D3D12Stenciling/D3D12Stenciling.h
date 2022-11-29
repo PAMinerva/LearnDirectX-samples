@@ -93,7 +93,6 @@ private:
     ComPtr<ID3D12PipelineState> m_stencilPipelineState;
     ComPtr<ID3D12PipelineState> m_reflectedLambertianPipelineState;
     ComPtr<ID3D12PipelineState> m_reflectedSolidColorPipelineState;
-    ComPtr<ID3D12PipelineState> m_projectedPipelineState;
     ComPtr<ID3D12GraphicsCommandList> m_commandList;
 
     // App resources.
