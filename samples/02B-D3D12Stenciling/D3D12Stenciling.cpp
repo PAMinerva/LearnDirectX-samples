@@ -719,7 +719,7 @@ void D3D12Stenciling::PopulateCommandList()
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
 
-    // Set PSO for object projected on other surfaces (planar shadow of the cube)
+    // Set PSO for transparent objects (shadows and mirror)
     m_commandList->SetPipelineState(m_blendingPipelineState.Get());
 
     // Update world matrix and output color to project the cube onto the floor with respect to 
@@ -756,9 +756,6 @@ void D3D12Stenciling::PopulateCommandList()
     m_commandList->DrawIndexedInstanced(36, 1, 0, 0, 0);
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
-
-    // Set PSO for transparent objects (mirror)
-    m_commandList->SetPipelineState(m_blendingPipelineState.Get());
 
     // Update world matrix and output color.
     XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixIdentity());
