@@ -352,6 +352,24 @@ void D3D12Stenciling::LoadAssets()
             //
             psoDesc.PS = CD3DX12_SHADER_BYTECODE(solidColorPS.Get());
             ThrowIfFailed(m_device->CreateGraphicsPipelineState(&psoDesc, IID_PPV_ARGS(&m_reflectedSolidColorPipelineState)));
+
+            //
+            // PSO for drawing objects projected on other surfaces like shadows.
+            //
+            // Use alpha blending
+            blendDesc.RenderTarget[0].BlendEnable = TRUE;
+
+            // Both depth and stencil tests are used. To prevent double blending:
+            // A pixel on the front face of a primitive will pass the stencil test if the value
+            // of the corresponding texel of the stencil buffer is EQUAL to the stencil reference value.
+            // The texel value is INCRemented if the pixel also passes the depth test.
+            depthdDesc.FrontFace.StencilPassOp = D3D12_STENCIL_OP_INCR;
+
+            psoDesc.PS = CD3DX12_SHADER_BYTECODE(solidColorPS.Get());
+            psoDesc.BlendState = blendDesc;
+            psoDesc.DepthStencilState = depthdDesc;
+            psoDesc.RasterizerState.FrontCounterClockwise = FALSE; // <-- irrelevant!
+            ThrowIfFailed(m_device->CreateGraphicsPipelineState(&psoDesc, IID_PPV_ARGS(&m_projectedPipelineState)));
         }
     }
 
@@ -719,8 +737,11 @@ void D3D12Stenciling::PopulateCommandList()
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
 
-    // Set PSO for transparent objects (shadows and mirror)
-    m_commandList->SetPipelineState(m_blendingPipelineState.Get());
+    // Set PSO for object projected on other surfaces (planar shadow of the cube)
+    m_commandList->SetPipelineState(m_projectedPipelineState.Get());
+
+    // Reset stencil ref. value to 0
+    m_commandList->OMSetStencilRef(0);
 
     // Update world matrix and output color to project the cube onto the floor with respect to 
     // the light source, and raise it a little to prevent z-fighting.
@@ -741,6 +762,9 @@ void D3D12Stenciling::PopulateCommandList()
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
 
+    // Set stencil ref. value to 1
+    m_commandList->OMSetStencilRef(1);
+
     // Update world matrix and output color to draw the shadow of the cube
     // reflected into the mirror.
     XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixTranspose(m_cubeWorldMatrix * S * shadowOffsetY * R));
@@ -756,6 +780,9 @@ void D3D12Stenciling::PopulateCommandList()
     m_commandList->DrawIndexedInstanced(36, 1, 0, 0, 0);
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
+
+    // Set PSO for transparent objects (mirror)
+    m_commandList->SetPipelineState(m_blendingPipelineState.Get());
 
     // Update world matrix and output color.
     XMStoreFloat4x4(&cbParameters.worldMatrix, XMMatrixIdentity());
