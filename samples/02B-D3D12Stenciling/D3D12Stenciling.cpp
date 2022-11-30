@@ -354,7 +354,7 @@ void D3D12Stenciling::LoadAssets()
             ThrowIfFailed(m_device->CreateGraphicsPipelineState(&psoDesc, IID_PPV_ARGS(&m_reflectedSolidColorPipelineState)));
 
             //
-            // PSO for drawing objects projected on other surfaces like shadows.
+            // PSO for drawing transparent objects projected on other surfaces like shadows.
             //
             // Use alpha blending
             blendDesc.RenderTarget[0].BlendEnable = TRUE;
@@ -737,7 +737,7 @@ void D3D12Stenciling::PopulateCommandList()
     baseGpuAddress += sizeof(PaddedConstantBuffer);
     ++constantBufferIndex;
 
-    // Set PSO for object projected on other surfaces (planar shadow of the cube)
+    // Set PSO for transparent object projected on other surfaces (planar shadow of the cube)
     m_commandList->SetPipelineState(m_projectedPipelineState.Get());
 
     // Reset stencil ref. value to 0
