@@ -33,6 +33,14 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
   <td><img src="images/Stenciling.gif"></td>
   <!-- <td> </td> -->
  </tr>
+  <tr>
+  <td>02.C - Drawing Normals (WIK)</a></td>
+  <!-- <td> </td>  -->
+ </tr>
+ <tr>
+  <td><img src="images/DrawNormals.gif"></td>
+  <!-- <td> </td> -->
+ </tr>
 </table>
 
 <br>
