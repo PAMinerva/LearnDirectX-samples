@@ -62,4 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-samples/* linguist-documentation=false
+samples/** linguist-documentation=false
