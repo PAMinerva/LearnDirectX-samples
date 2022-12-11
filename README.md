@@ -34,7 +34,7 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
   <!-- <td> </td> -->
  </tr>
   <tr>
-  <td>02.C - Drawing Normals (WIK)</a></td>
+  <td><a href="https://github.com/PAMinerva/LearnDirectX/tree/master/samples/02C-D3D12DrawingNormals">02.C - Drawing Normals (WIK)</a></td>
   <!-- <td> </td>  -->
  </tr>
  <tr>
