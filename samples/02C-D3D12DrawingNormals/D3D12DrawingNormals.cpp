@@ -22,7 +22,10 @@ D3D12DrawingNormals::D3D12DrawingNormals(UINT width, UINT height, std::wstring n
     m_rtvDescriptorSize(0),
     m_frameIndex(0),
     m_fenceValues{},
-    m_curRotationAngleRad(0.0f)
+    m_fenceEvent(nullptr),
+    m_curRotationAngleRad(0.0f),
+    m_indexBufferView{},
+    m_vertexBufferView{}
 {
     // Initialize the world matrix
     m_worldMatrix = XMMatrixIdentity();
@@ -238,11 +241,7 @@ void D3D12DrawingNormals::LoadAssets()
 
     // Create the pipeline state objects, which includes compiling and loading shaders.
     {
-        ComPtr<ID3DBlob> mainVS;
-        ComPtr<ID3DBlob> passThroughVS;
-        ComPtr<ID3DBlob> mainGS;
-        ComPtr<ID3DBlob> lambertPS;
-        ComPtr<ID3DBlob> solidColorPS;
+        ComPtr<ID3DBlob> mainVS, passThroughVS, mainGS, lambertPS, solidColorPS;
 
 #if defined(_DEBUG)
         // Enable better shader debugging with the graphics debugging tools.
@@ -321,7 +320,7 @@ void D3D12DrawingNormals::LoadAssets()
             nullptr,
             IID_PPV_ARGS(&m_vertexBuffer)));
 
-        // Copy the cube data to the vertex buffer.
+        // Copy the sphere data to the vertex buffer.
         UINT8* pVertexDataBegin = nullptr;
         CD3DX12_RANGE readRange(0, 0);        // We do not intend to read from this resource on the CPU.
         ThrowIfFailed(m_vertexBuffer->Map(0, &readRange, reinterpret_cast<void**>(&pVertexDataBegin)));
@@ -341,7 +340,7 @@ void D3D12DrawingNormals::LoadAssets()
             nullptr,
             IID_PPV_ARGS(&m_indexBuffer)));
 
-        // Copy the cube data to the vertex buffer.
+        // Copy the sphere data to the index buffer.
         ThrowIfFailed(m_indexBuffer->Map(0, &readRange, reinterpret_cast<void**>(&pVertexDataBegin)));
         memcpy(pVertexDataBegin, sphereIndices.data(), sphereIndices.size() * sizeof(UINT16));
         m_indexBuffer->Unmap(0, nullptr);
