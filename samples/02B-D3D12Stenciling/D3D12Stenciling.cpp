@@ -457,7 +457,7 @@ void D3D12Stenciling::LoadAssets()
             nullptr,
             IID_PPV_ARGS(&m_vertexBuffer)));
 
-        // Copy the cube data to the vertex buffer.
+        // Copy geometry data to the vertex buffer.
         UINT8* pVertexDataBegin = nullptr;
         CD3DX12_RANGE readRange(0, 0);        // We do not intend to read from this resource on the CPU.
         ThrowIfFailed(m_vertexBuffer->Map(0, &readRange, reinterpret_cast<void**>(&pVertexDataBegin)));
@@ -528,7 +528,7 @@ void D3D12Stenciling::LoadAssets()
             nullptr,
             IID_PPV_ARGS(&m_indexBuffer)));
 
-        // Copy the cube data to the vertex buffer.
+        // Copy the geometry data to the index buffer.
         ThrowIfFailed(m_indexBuffer->Map(0, &readRange, reinterpret_cast<void**>(&pVertexDataBegin)));
         memcpy(pVertexDataBegin, indices, sizeof(indices));
         m_indexBuffer->Unmap(0, nullptr);
