@@ -35,10 +35,12 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
  </tr>
   <tr>
   <td><a href="https://github.com/PAMinerva/LearnDirectX/tree/master/samples/02C-D3D12DrawingNormals">02.C - Drawing Normals</a></td>
+  <td>02.D - Simple rain effect (WIK)</td>
   <!-- <td> </td>  -->
  </tr>
  <tr>
   <td><img src="images/DrawNormals.gif"></td>
+  <td><img src="images/RainEffect.gif"></td>
   <!-- <td> </td> -->
  </tr>
 </table>
