@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02B-D3D12Stenciling", "samp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02C-D3D12DrawingNormals", "samples\02C-D3D12DrawingNormals\02C-D3D12DrawingNormals.vcxproj", "{9E5973DE-9213-4E20-9DBB-CCBE7010CB4A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02D-D3D12SimpleRainEffect", "samples\02D-D3D12SimpleRainEffect\02D-D3D12SimpleRainEffect.vcxproj", "{86B4A226-5DD4-4216-B121-657CD02EE554}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{9E5973DE-9213-4E20-9DBB-CCBE7010CB4A}.Release|x64.Build.0 = Release|x64
 		{9E5973DE-9213-4E20-9DBB-CCBE7010CB4A}.Release|x86.ActiveCfg = Release|Win32
 		{9E5973DE-9213-4E20-9DBB-CCBE7010CB4A}.Release|x86.Build.0 = Release|Win32
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Debug|x64.ActiveCfg = Debug|x64
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Debug|x64.Build.0 = Debug|x64
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Debug|x86.ActiveCfg = Debug|Win32
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Debug|x86.Build.0 = Debug|Win32
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Release|x64.ActiveCfg = Release|x64
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Release|x64.Build.0 = Release|x64
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Release|x86.ActiveCfg = Release|Win32
+		{86B4A226-5DD4-4216-B121-657CD02EE554}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
