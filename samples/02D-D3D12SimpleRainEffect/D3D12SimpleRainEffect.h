@@ -133,6 +133,7 @@ private:
     // Particle collection
     std::vector<Vertex> particleVertices;
 
+    // Streaming resources
     ComPtr<ID3D12Resource>			m_streamOutputBuffer;
     D3D12_STREAM_OUTPUT_BUFFER_VIEW m_streamOutputBufferView;
     ComPtr<ID3D12Resource>			m_streamFilledSizeBuffer;
