@@ -540,6 +540,7 @@ void D3D12SimpleRainEffect::PopulateCommandList()
     D3D12_STREAM_OUTPUT_BUFFER_VIEW streamOutputBufferViews[]{ m_streamOutputBufferView };
     m_commandList->SOSetTargets(0, _countof(streamOutputBufferViews), streamOutputBufferViews);
     
+    // Streaming pass
     // "Draw" the particles to modify their y-coordinate with the help of GS and SO stages
     m_commandList->DrawInstanced((UINT)particleVertices.size(), 1, 0, 0);
     baseGpuAddress += sizeof(PaddedConstantBuffer);
@@ -584,6 +585,7 @@ void D3D12SimpleRainEffect::PopulateCommandList()
     // Unbind the stream output buffer from the SO
     m_commandList->SOSetTargets(0, 1, NULL);
 
+    // Rendering pass
     // "Draw" the particles with the help of the GS in order to amplify the geometry to a set of quads.
     m_commandList->DrawInstanced(nVertices, 1, 0, 0);
 
