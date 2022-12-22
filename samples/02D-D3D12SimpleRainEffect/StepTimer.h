@@ -24,7 +24,7 @@ public:
         m_framesThisSecond(0),
         m_qpcSecondCounter(0),
         m_isFixedTimeStep(false),
-        m_targetElapsedTicks(MsPerSecond / 60)
+        m_targetElapsedTicks(TicksPerSecond / 60)
     {
         QueryPerformanceFrequency(&m_qpcFrequency);
         QueryPerformanceCounter(&m_qpcLastTime);
@@ -54,11 +54,11 @@ public:
     void SetTargetElapsedTicks(UINT64 targetElapsed)    { m_targetElapsedTicks = targetElapsed; }
     void SetTargetElapsedSeconds(double targetElapsed)    { m_targetElapsedTicks = SecondsToTicks(targetElapsed); }
 
-    // There are 10,000,000 microseconds per second.
-    static const UINT64 MsPerSecond = 10000000;
+    // Integer format represents time using 10,000,000 ticks per second.
+    static const UINT64 TicksPerSecond = 10000000;
 
-    static double TicksToSeconds(UINT64 ticks)            { return static_cast<double>(ticks) / MsPerSecond; }
-    static UINT64 SecondsToTicks(double seconds)        { return static_cast<UINT64>(seconds * MsPerSecond); }
+    static double TicksToSeconds(UINT64 ticks)            { return static_cast<double>(ticks) / TicksPerSecond; }
+    static UINT64 SecondsToTicks(double seconds)        { return static_cast<UINT64>(seconds * TicksPerSecond); }
 
     // After an intentional timing discontinuity (for instance a blocking IO operation)
     // call this to avoid having the fixed timestep logic attempt a set of catch-up 
@@ -99,7 +99,7 @@ public:
         // We use these values to convert to the number of elapsed microseconds.
         // To guard against loss-of-precision, we convert to microseconds *before* dividing by ticks-per-second.
         // This cannot overflow due to the previous clamp.
-        timeDelta *= MsPerSecond;
+        timeDelta *= TicksPerSecond;
         timeDelta /= m_qpcFrequency.QuadPart;
 
         UINT32 lastFrameCount = m_frameCount;
@@ -115,7 +115,7 @@ public:
             // accumulate enough tiny errors that it would drop a frame. It is better to just round 
             // small deviations down to zero to leave things running smoothly.
 
-            if (abs(static_cast<int>(timeDelta - m_targetElapsedTicks)) < MsPerSecond / 4000)
+            if (abs(static_cast<int>(timeDelta - m_targetElapsedTicks)) < TicksPerSecond / 4000)
             {
                 timeDelta = m_targetElapsedTicks;
             }
