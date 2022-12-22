@@ -95,7 +95,10 @@ public:
             timeDelta = m_qpcMaxDelta;
         }
 
-        // Convert QPC units into a canonical tick format. This cannot overflow due to the previous clamp.
+        // We now have the elapsed number of ticks, along with the number of ticks-per-second. 
+        // We use these values to convert to the number of elapsed microseconds.
+        // To guard against loss-of-precision, we convert to microseconds *before* dividing by ticks-per-second.
+        // This cannot overflow due to the previous clamp.
         timeDelta *= TicksPerSecond;
         timeDelta /= m_qpcFrequency.QuadPart;
 
