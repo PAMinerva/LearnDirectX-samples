@@ -387,7 +387,7 @@ void D3D12SimpleRainEffect::LoadAssets()
             nullptr,
             IID_PPV_ARGS(&m_streamFilledSizeBuffer)));
 
-        // Upload buffer to initialize the filled size buffer
+        // Upload buffer to clear the filled size buffer
         ThrowIfFailed(m_device->CreateCommittedResource(
             &CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD),
             D3D12_HEAP_FLAG_NONE,
