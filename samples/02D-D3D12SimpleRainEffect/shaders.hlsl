@@ -13,6 +13,7 @@ cbuffer Constants : register(b0)
 	float4x4 mView;
 	float4x4 mProjection;
 	float4 outputColor;
+	float3 cameraWPos;
 	float deltaTime;
 };
 
@@ -74,9 +75,13 @@ void MainGS(point VS_INPUT input[1], inout TriangleStream<GS_OUTPUT> outputStrea
     // World coordinates of the input point\particle
 	float3 positionW = mul(float4(input[0].Pos, 1.0f), mWorld).xyz;
     
-	// World up and right directions
+	// We need the up direction of the world space, and right direction with respect to the camera.
+	// We can use the projection of the lookAt vector onto the xz-plane to calculate the right direction.
 	float3 up = float3(0.0f, 1.0f, 0.0f);
-	float3 right = float3(1.0f, 0.0f, 0.0f);
+	float3 look = positionW - cameraWPos;
+	look.y = 0.0f;
+	look = normalize(look);
+	float3 right = cross(up, look);
     
 	// Half-size of the input point\particle
 	float hw = 0.5f * input[0].Size.x;

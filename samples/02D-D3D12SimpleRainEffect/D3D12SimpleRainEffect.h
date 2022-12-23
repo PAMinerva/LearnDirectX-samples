@@ -59,11 +59,12 @@ private:
         XMFLOAT4X4 viewMatrix;         // 64 bytes
         XMFLOAT4X4 projectionMatrix;   // 64 bytes
         XMFLOAT4 outputColor;          // 16 bytes
+        XMFLOAT3 cameraWPos;           // 12 bytes
         FLOAT deltaTime;               //  4 bytes
     };
 
     // We'll allocate space for several of these and they will need to be padded for alignment.
-    static_assert(sizeof(ConstantBuffer) == 212, "Checking the size here.");
+    static_assert(sizeof(ConstantBuffer) == 224, "Checking the size here.");
 
     // D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT < 272 < 2 * D3D12_CONSTANT_BUFFER_DATA_PLACEMENT_ALIGNMENT
     // Create a union with the correct size and enough room for one ConstantBuffer
@@ -123,6 +124,7 @@ private:
     XMMATRIX m_viewMatrix;
     XMMATRIX m_projectionMatrix;
     XMVECTOR m_outputColor;
+    XMVECTOR m_cameraWPos;
 
     void LoadPipeline();
     void LoadAssets();

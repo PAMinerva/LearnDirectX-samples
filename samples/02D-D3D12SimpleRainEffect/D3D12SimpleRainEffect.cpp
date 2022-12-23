@@ -36,6 +36,9 @@ D3D12SimpleRainEffect::D3D12SimpleRainEffect(UINT width, UINT height, std::wstri
     static const XMVECTORF32 c_up = { 0.0f, 1.0f, 0.0f, 0.0 };
     m_viewMatrix = XMMatrixLookAtLH(c_eye, c_at, c_up);
 
+    // Save camera position in world coordinates
+    m_cameraWPos = c_eye;
+
     // Initialize the projection matrix
     m_projectionMatrix = XMMatrixPerspectiveFovLH(XM_PIDIV4, width / (FLOAT)height, 0.01f, 100.0f);
 
@@ -525,6 +528,7 @@ void D3D12SimpleRainEffect::PopulateCommandList()
     XMStoreFloat4x4(&cbParameters.viewMatrix, XMMatrixTranspose(m_viewMatrix));
     XMStoreFloat4x4(&cbParameters.projectionMatrix, XMMatrixTranspose(m_projectionMatrix));
     XMStoreFloat4(&cbParameters.outputColor, m_outputColor);
+    XMStoreFloat3(&cbParameters.cameraWPos, m_cameraWPos);
     cbParameters.deltaTime = (FLOAT)m_timer.GetElapsedSeconds();
 
     // Set the constants for the first draw call
