@@ -50,7 +50,7 @@ void MainGSSO(point VS_INPUT input[1], inout PointStream<VS_INPUT> output)
 {
 	VS_INPUT particle = input[0];
     
-    // Decrease the height of the point\particle over time
+    // Decrease the height of the point\particle over time based on its speed
 	particle.Pos.y -= particle.Speed * deltaTime;
     
     // Reset the height of the point\particle
