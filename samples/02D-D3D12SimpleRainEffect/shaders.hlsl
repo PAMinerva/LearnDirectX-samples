@@ -42,6 +42,29 @@ VS_INPUT MainVS(VS_INPUT In)
 
 
 //--------------------------------------------------------------------------------------
+// Name: MainGSSO
+// Desc: Geometry shader for moving particles
+//--------------------------------------------------------------------------------------
+[maxvertexcount(4)]
+void MainGSSO(point VS_INPUT input[1], inout PointStream<VS_INPUT> output)
+{
+	VS_INPUT particle = input[0];
+    
+    // Decrease the height of the point\particle over time
+	particle.Pos.y -= particle.Speed * deltaTime;
+    
+    // Reset the height of the point\particle
+	if (particle.Pos.y < -50.0f)
+	{
+		particle.Pos.y = 50.0f;
+	}
+	
+	// Emit the point\particle with the updated position
+	output.Append(particle);
+}
+
+
+//--------------------------------------------------------------------------------------
 // Name: MainGS
 // Desc: Geometry shader for drawing quads from points\particles
 //--------------------------------------------------------------------------------------
@@ -78,29 +101,6 @@ void MainGS(point VS_INPUT input[1], inout TriangleStream<GS_OUTPUT> outputStrea
 		output.Pos = mul(output.Pos, mProjection);
 		outputStream.Append(output);
 	}
-}
-
-
-//--------------------------------------------------------------------------------------
-// Name: MainGSSO
-// Desc: Geometry shader for moving particles
-//--------------------------------------------------------------------------------------
-[maxvertexcount(4)]
-void MainGSSO(point VS_INPUT input[1], inout PointStream<VS_INPUT> output)
-{
-	VS_INPUT particle = input[0];
-    
-    // Decrease the height of the point\particle over time
-	particle.Pos.y -= particle.Speed * deltaTime;
-    
-    // Reset the height of the point\particle
-	if (particle.Pos.y < -50.0f)
-	{
-		particle.Pos.y = 50.0f;
-	}
-	
-	// Emit the point\particle with the updated position
-	output.Append(particle);
 }
 
 
