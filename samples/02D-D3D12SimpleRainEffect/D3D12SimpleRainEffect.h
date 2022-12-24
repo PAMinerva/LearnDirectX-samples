@@ -119,7 +119,6 @@ private:
     static const unsigned int c_numDrawCalls = 2;
 
     // These computed values will be loaded into a ConstantBuffer
-    // during Render
     XMMATRIX m_worldMatrix;
     XMMATRIX m_viewMatrix;
     XMMATRIX m_projectionMatrix;
