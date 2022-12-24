@@ -75,13 +75,13 @@ void MainGS(point VS_INPUT input[1], inout TriangleStream<GS_OUTPUT> outputStrea
     // World coordinates of the input point\particle
 	float3 positionW = mul(float4(input[0].Pos, 1.0f), mWorld).xyz;
     
-	// We need the up direction of the world space, and right direction with respect to the camera.
-	// We can use the projection of the lookAt vector onto the xz-plane to calculate the right direction.
+	// We need the up direction of the world space, and left direction with respect to the quad.
+	// We can use the projection of the front vector onto the xz-plane to calculate the left direction.
 	float3 up = float3(0.0f, 1.0f, 0.0f);
-	float3 look = positionW - cameraWPos;
-	look.y = 0.0f;
-	look = normalize(look);
-	float3 right = cross(up, look);
+	float3 front = cameraWPos - positionW;
+	front.y = 0.0f;
+	front = normalize(front);
+	float3 left = cross(up, front);
     
 	// Half-size of the input point\particle
 	float hw = 0.5f * input[0].Size.x;
@@ -90,10 +90,10 @@ void MainGS(point VS_INPUT input[1], inout TriangleStream<GS_OUTPUT> outputStrea
 	// Compute the world coordinates of the quad from the point\particle attributes
 	float4 position[4] =
 	{
-		float4(positionW - (hw * right) - (hh * up), 1.0f), // Left-Bottom
-        float4(positionW - (hw * right) + (hh * up), 1.0f), // Left-Top
-        float4(positionW + (hw * right) - (hh * up), 1.0f), // Right-Bottom
-        float4(positionW + (hw * right) + (hh * up), 1.0f)  // Rright-Top
+		float4(positionW + (hw * left) - (hh * up), 1.0f), // Left-Bottom
+        float4(positionW + (hw * left) + (hh * up), 1.0f), // Left-Top
+        float4(positionW - (hw * left) - (hh * up), 1.0f), // Right-Bottom
+        float4(positionW - (hw * left) + (hh * up), 1.0f)  // Rright-Top
 	};
 
 	// Transform the four vertices of the quad from world to clip space, and
