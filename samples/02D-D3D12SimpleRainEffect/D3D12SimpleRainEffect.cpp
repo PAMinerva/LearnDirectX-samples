@@ -449,6 +449,14 @@ void D3D12SimpleRainEffect::LoadAssets()
 void D3D12SimpleRainEffect::OnUpdate()
 {
     m_timer.Tick(NULL);
+
+    if (m_frameCounter++ % 30 == 0)
+    {
+        // Update window text with FPS value.
+        wchar_t fps[64];
+        swprintf_s(fps, L"%ufps", m_timer.GetFramesPerSecond());
+        SetCustomWindowText(fps);
+    }
 }
 
 // Render the scene.

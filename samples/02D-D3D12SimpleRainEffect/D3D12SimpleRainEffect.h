@@ -107,6 +107,7 @@ private:
 
     // Synchronization objects.
     UINT m_frameIndex;
+    UINT m_frameCounter;
     HANDLE m_fenceEvent;
     ComPtr<ID3D12Fence> m_fence;
     UINT64 m_fenceValues[FrameCount];
