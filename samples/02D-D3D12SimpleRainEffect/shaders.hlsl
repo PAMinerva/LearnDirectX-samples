@@ -46,7 +46,7 @@ VS_INPUT MainVS(VS_INPUT In)
 // Name: MainGSSO
 // Desc: Geometry shader for moving particles
 //--------------------------------------------------------------------------------------
-[maxvertexcount(4)]
+[maxvertexcount(1)]
 void MainGSSO(point VS_INPUT input[1], inout PointStream<VS_INPUT> output)
 {
 	VS_INPUT particle = input[0];
