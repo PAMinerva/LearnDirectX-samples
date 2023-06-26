@@ -4,7 +4,10 @@ This repository hosts the code of additional samples for the tutorial series you
 
 [Learn DirectX 12 from code samples](https://paminerva.github.io/docs/LearnDirectX/LearnDirectX)
 
-Note: All code samples are licensed under the terms of the MIT license, while all content in the wiki, including images and Markdown code of the tutorials, is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/
+<br>
+
+## License
+All code samples are licensed under the terms of the MIT license, while all content in the wiki, including images and Markdown code of the tutorials, is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/
 
 <br>
 
