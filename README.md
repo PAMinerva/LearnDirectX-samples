@@ -6,11 +6,6 @@ This repository hosts the code of additional samples for the tutorial series you
 
 <br>
 
-## License
-All code samples are licensed under the terms of the MIT license, while all content in the wiki, including images and Markdown code of the tutorials, is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/
-
-<br>
-
 ***
 As you can see, some tutorials are almost comparable to book chapters. It takes a fair amount of time and effort to write such detailed tutorials. So, if you like this project, or if you find it somewhat helpful, please consider supporting further development by clicking on the **Sponsor** button. Whether a small tip, a one time donation, or a recurring payment, it's all welcome! Thank you! <br>
 ***
@@ -51,6 +46,11 @@ As you can see, some tutorials are almost comparable to book chapters. It takes 
 </table>
 
 <br>
+
+<br>
+
+## License
+All code samples are licensed under the terms of the MIT license, while all content in the wiki, including images and Markdown code of the tutorials, is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/
 
 <br>
 
